@@ -1,0 +1,529 @@
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: url(./assets/f1-mercedes.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+}
+body a{
+  text-decoration: none;
+}
+body a:hover{
+  text-decoration: none;
+}
+#f1-logo{
+  position: absolute;
+  height: 50px;
+  width: auto;
+  right: 50px;
+  bottom: 50px;
+}
+#content-box{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.267);
+  display: grid;
+  grid-template-columns:repeat(100, 1fr) ;
+  grid-template-rows:repeat(100, 1fr) ;
+}
+/* style nagłówka */
+#header{
+  background-color: rgba(0, 0, 0, 0.397);
+  backdrop-filter: blur(15px);
+  min-width: 900px;
+  min-height: 64px;
+  grid-row: 4 / 10;
+  grid-column: 21 / 81;
+  border-radius: 10px;
+  border: 1px solid white;
+  -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  }
+      /* style przycisków nawigacji nagłówka */
+      #header .nav-button{
+          text-shadow: 2px 2px 9px #414141;
+          font-size: 25px;
+          color: white;
+          padding: 2px 16px;
+          transition: color 0.3s ease;
+          padding: 18px;
+          cursor: pointer;
+      }
+      /* akcje hover'u przycisków nawigacji nagłówka */
+      #header .nav-button:hover{
+          color: red;
+          text-shadow: none;
+      }
+      /* domyślne zachowanie zdjęć na stronie */
+      #content-box img{
+          width: 130px;
+          height: auto;
+          margin-left: -170px;
+      }
+      /* stylizacje przycisku powrotu do strony głównej  */
+      #home{
+          border-left: 1.5px solid white;
+          padding: 15px 11px 18px 30px;
+      }
+
+
+/* ------------------------------------------------------------------------
+----------------------sekcja kierowcy------------------------------------------- */
+
+/* stylizacja pojemnika na kierowców pod przyciskiem 'kierowcy' */
+#drivers{
+  background-color: rgba(0, 0, 0, 0.541);
+  backdrop-filter: blur(15px);
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+  grid-column: 20 / 82;
+  grid-row: 10 / 41;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  display: flex;
+  /* display: none; */
+  height: 250px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* stylizacja dla hiperłacza pojemnika kierowców */
+  #drivers a{
+      text-decoration: none ;
+      color: white;
+      transition: background-color 0.2s linear;
+      transition: all 0.3s ease;
+  }
+  #drivers a:hover{
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.281);
+      border-radius: 10px 0px 10px 0px;
+      .driver img{
+        right: -40px;
+      }
+      .driver-number{
+        right: 45px
+      }
+  }
+  /* stylizacja pojemnika na konkretnego kierowcę */
+  .driver{
+      width: 200px;
+      height: 40px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      /* padding-left: 10px; */
+      border-radius: 0px 0px 10px 0px;
+      position: relative;
+  }
+  /* stylizacja nazwy kierowcy */
+  .driver span{
+      width: 50px;
+  }
+  /* stylizacja flagi kierowcy */
+  .driver img{
+      width: auto;
+      height: 28px !important;
+      position: absolute;
+      right: 0px;
+      transition: right 0.3s ease;
+  }
+  .driver .driver-number{
+    position: absolute;
+    right: 5px;
+    bottom: -1px;
+    font-size: 25px;
+    color:rgb(193, 207, 212);
+    /* background-color: rgb(71, 75, 75); */
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: right 0.3s ease;
+  }
+
+  /* ------------indywidualna sekcja dla kierowców--------- */
+
+
+/* -------------------------------------------------------------------------
+-----------------------------sekcja zespołów--------------------------------------- */
+
+/* stylizacja pojemnika na zespoły */
+#teams{
+  background-color: rgba(187, 187, 187, 0.541);
+  backdrop-filter: blur(8px);
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+  grid-column: 20 / 82;
+  grid-row: 10 / 100;
+  min-width: 1180px;
+  height: 344px;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  display: none;
+  }
+  /* stylizacja hiperłącz dla pojemnika zespołów */
+  #teams a{
+      text-decoration: none ;
+      color: black;
+      font-size: 25px;
+      transition: background-color 0.2s linear;
+  }
+  #teams a:hover{
+      text-decoration: none;
+      background-color: rgba(66, 65, 65, 0.281);
+      border-radius: 10px 0px 10px 0px;
+  }
+  /* indywidualny pojemnik na zespół */
+  .team{
+      width: 233.3px;
+      height: 175px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* padding-left: 10px; */
+      position: relative;
+      /* background-color: #2293d1; */
+      /* border-left: 0.1px solid white;
+      border-bottom: 0.1px solid white;
+      border-right: 0.1px solid white;
+      border-top: 0.1px solid white; */
+  }
+/* ------------indywidualna sekcja dla zespołów--------- */
+  .f1-logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 170px;
+  }
+  #red-bull img{
+      width: 160px;
+      height: auto;
+      margin-left: -165px;
+  }
+  #mercedes img{
+      width: 160px;
+      height: auto;
+      margin-left: -165px;
+  }
+  #mclaren img{
+      width: 210px;
+      height: auto;
+      margin-left: -150px;
+  }
+  #aston-martin img{
+      width: 160px;
+      height: auto;
+      margin-left: -165px;
+  }
+  #williams{
+      border-radius: 0px 0px 0px 10px;
+  }
+  #williams img{
+      width: 120px;
+      height: auto;
+      margin-left: -165px;
+  }
+  #haas img{
+      width: 170px;
+      height: auto;
+      margin-left: -185px;
+  }
+  #alphatauri{
+      border-radius: 0px 0px 10px 0px;
+  }
+
+  /* -------------------------------------------------------------------------------------------
+  ---------------------------Statystyki czasu Rzeczywistego-------------------------------------------- */
+
+  /* --------------------------------kierowcy--------------------------------------------------- */
+
+  /* stylizacja pojemnika statystyk kierowców */
+  #drivers-leaderboards{
+      background-color: #ffffff;
+      min-width: 260px;
+      grid-column: 83/100;
+      grid-row: 4 / 100;
+      display: flex;
+      flex-flow:column;
+      justify-content: flex-start;
+      align-items: center;
+      border: #414141 1px solid;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 60px;
+      transition: height 0.7s ease;
+      -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      overflow: scroll;
+  }
+  /* stylizacja hoveru pojemnika statystyk kierowców */
+  #drivers-leaderboards:hover{
+      height: 88vh;
+      z-index: 2;
+  }
+  /* stylizacja nagłówka statystyk kierowców */
+  #drivers-leaderboards h3{
+      margin-top: 20PX;
+      margin-bottom: 30PX;
+      user-select: none;
+  }
+/* stylizacja hiperłącz statystyk kierowców */
+  #drivers-leaderboards a{
+      height: 35px;
+      width: 100%;
+      text-decoration: none;
+  }
+  #drivers-leaderboards a:hover{
+      text-decoration: none;
+  }
+  /* stylizacja pojemnika na statystyke konkretnego kierowcy */
+  .leaderboard-driver{
+      width: 100%;
+      height: 35px;
+      border-radius: 10px;
+      display: flex;
+  }
+     /* stylizacja pojemnika na punkty konkretnego kierowcy */
+  .leaderboard-driver-points{
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right:5px ;
+  }
+     /* stylizacja pojemnika na nazwę konkretnego kierowcy */
+  .leaderboard-driver-name{
+      height: 100%;
+      width: 65%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 17px;
+      color: black;
+      padding-left: 10px;
+  }
+     /* stylizacja pojemnika na pozycję konkretnego kierowcy */
+  .leaderboard-driver-place{
+      height: 100%;
+      width: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  /* stylizacja linijek statystyk kierowców */
+  #drivers-leaderboards a:nth-child(2n){
+      background-color:#ebeaea ;
+  }
+  #drivers-leaderboards a:nth-child(2n+1){
+      background-color:white;
+  }
+
+/* -------------------------------------------zespoły--------------------------------------- */
+
+  /* stylizacja pojemnika statystyk zespołów */
+  #constructor-leaderboards{
+      background-color: #ffffff;
+      min-width: 260px;
+      grid-column: 2/19;
+      grid-row: 4 / 50;
+      display: flex;
+      flex-flow:column;
+      justify-content: flex-start;
+      align-items: center;
+      border: #414141 1px solid;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 60px;
+      transition: height 0.4s ease;
+      -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      overflow: scroll;
+  }
+      /* stylizacja hoveru pojemnika statystyk zespołów */
+  #constructor-leaderboards:hover{
+      height: 44vh;
+      z-index: 2;
+
+  }
+      /* stylizacja nagłówka statystyk zespołów */
+  #constructor-leaderboards h3{
+      margin-top: 20PX;
+      margin-bottom: 30PX;
+      user-select: none;
+  }
+      /* stylizacja hiperłacz pojemnika statystyk zespołów */
+  #constructor-leaderboards a{
+      height: 35px;
+      width: 100%;
+      text-decoration: none;
+  }
+  #constructor-leaderboards a:hover{
+      text-decoration: none;
+  }
+  /* stylizacja pojemnika statystyk konkretnego zespołu */
+  .leaderboard-constructor{
+      width: 100%;
+      height: 35px;
+      border-radius: 10px;
+      display: flex;
+  }
+      /* stylizacja punktów konkretnego zespołu */
+  .leaderboard-constructor-points{
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right:5px ;
+  }      /* stylizacja nazw konkretnego zespołu */
+  .leaderboard-constructor-name{
+      height: 100%;
+      width: 65%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 17px;
+      color: black;
+      padding-left: 10px;
+  }
+        /* stylizacja pozycji konkretnego zespołu */
+  .leaderboard-constructor-place{
+      height: 100%;
+      width: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  /* stylizacja linijek statystyk zespołow */
+  #constructor-leaderboards a:nth-child(2n){
+      background-color:#ebeaea ;
+  }
+  #constructor-leaderboards a:nth-child(2n+1){
+      background-color:white;
+  }
+  #small-nav{
+      display: none;
+      grid-column: 46 / 56;
+      grid-row: 10 / 15;
+      background-color: rgba(0, 0, 0, 0.397);
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      font-size: 26px;
+      -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+      border-bottom: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-radius: 0px 0px 10px 10px;
+      min-height: 45px;
+  }
+  #small-nav a{
+      color: white;
+      padding: 8px;
+  }
+  #small-nav a:hover{
+      color: red;
+      text-shadow: none;
+  }
+  @media screen and (max-width: 1675px) {
+      #constructor-leaderboards{
+          grid-row:11/ 100 ;
+          grid-column: 20 / 35;
+      }
+      #constructor-leaderboards:hover{
+          height: 43vh;
+      }
+      #drivers-leaderboards{
+          grid-row:11/ 100 ;
+          grid-column: 68 / 82;
+      }
+      #drivers-leaderboards:hover{
+          height: 70vh;
+      }
+      #drivers{
+          height: 650px;
+          width: 430px;
+          grid-column: 37 / 82;
+          grid-row: 10 / 100;
+      }
+      
+  }
+  /* @media screen and (max-width: 1150px) {
+      #constructor-leaderboards{
+          display: none;
+      }
+      #drivers-leaderboards{
+          display: none;
+      }
+      #nav-drivers{
+          display: none;
+      }
+      #nav-teams{
+          display: none;
+      }
+      #header{
+          grid-column: 40 / 62;
+          min-width: 680px;
+      }
+      #small-nav{
+          display: flex;
+      }
+  } */
+  @media screen and (max-width: 680px){
+      #header{
+          min-width: 590px;
+      }
+      #header .nav-button{
+          font-size: 22px;
+      }
+      #home{
+          display: none;
+      }    
+  }
+
+  /* ===== Scrollbar CSS ===== */
+/* Firefox */
+
+/* Chrome, Edge, and Safari */
+
+
+
+*::-webkit-scrollbar {
+  width: 0.1px;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  display: none;
+}
