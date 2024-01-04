@@ -11,11 +11,13 @@ body{
   font-family: 'Dancing Script', cursive;
   font-family: 'Josefin Sans', sans-serif;
 }
-body a{
+ a{
   text-decoration: none;
+  color: inherit;
 }
-body a:hover{
+ a:hover{
   text-decoration: none;
+  color: inherit;
 }
 #f1-logo{
   position: absolute;
@@ -39,7 +41,7 @@ body a:hover{
   min-width: 900px;
   min-height: 64px;
   grid-row: 4 / 10;
-  grid-column: 21 / 81;
+  grid-column: 25 / 76;
   border-radius: 10px;
   border: 1px solid white;
   -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
@@ -66,11 +68,11 @@ body a:hover{
           text-shadow: none;
       }
       /* domyślne zachowanie zdjęć na stronie */
-      #content-box img{
-          width: 130px;
+      /* #content-box img{
+          width: 50px;
           height: auto;
           margin-left: -170px;
-      }
+      } */
       /* stylizacje przycisku powrotu do strony głównej  */
       #home{
           border-left: 1.5px solid white;
@@ -90,15 +92,15 @@ body a:hover{
   border-right: 2px solid white;
   border-top: 1px solid white;
   border-radius: 10px;
-  grid-column: 20 / 82;
-  grid-row: 10 / 41;
+  grid-column: 25 / 76;
+  grid-row: 10 / 46;
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
   color: white;
   display: flex;
   /* display: none; */
-  height: 250px;
+  min-height: 220px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -174,15 +176,17 @@ body a:hover{
   border-right: 2px solid white;
   border-top: 1px solid white;
   border-radius: 10px;
-  grid-column: 20 / 82;
-  grid-row: 10 / 100;
-  min-width: 1180px;
-  height: 344px;
+  /* grid-column: 20 / 82; */
+  grid-row: 10 / 43;
+  grid-column: 25 / 76;
+  /* min-width: 1180px; */
+  min-height: 260px;
   flex-flow: wrap;
-  justify-content: space-between;
-  align-items: center;
   color: white;
-  display: none;
+  display: grid;
+  /* display: none; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   }
   /* stylizacja hiperłącz dla pojemnika zespołów */
   #teams a{
@@ -190,6 +194,9 @@ body a:hover{
       color: black;
       font-size: 25px;
       transition: background-color 0.2s linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
   #teams a:hover{
       text-decoration: none;
@@ -198,13 +205,14 @@ body a:hover{
   }
   /* indywidualny pojemnik na zespół */
   .team{
-      width: 233.3px;
-      height: 175px;
-      display: flex;
+      /* width: 233.3px;
+      height: 175px; */
+      /* background-color: aqua; */
+      /* display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center; */
       /* padding-left: 10px; */
-      position: relative;
+      /* position: relative; */
       /* background-color: #2293d1; */
       /* border-left: 0.1px solid white;
       border-bottom: 0.1px solid white;
@@ -216,9 +224,13 @@ body a:hover{
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-left: 170px;
+      /* margin-left: 170px; */
   }
-  #red-bull img{
+  .f1-logo-img{
+    width: 100px;
+    height: auto;
+  }
+  /* #red-bull img{
       width: 160px;
       height: auto;
       margin-left: -165px;
@@ -253,7 +265,7 @@ body a:hover{
   }
   #alphatauri{
       border-radius: 0px 0px 10px 0px;
-  }
+  } */
 
   /* -------------------------------------------------------------------------------------------
   ---------------------------Statystyki czasu Rzeczywistego-------------------------------------------- */
@@ -263,8 +275,8 @@ body a:hover{
   /* stylizacja pojemnika statystyk kierowców */
   #drivers-leaderboards{
       background-color: #ffffff;
-      min-width: 260px;
-      grid-column: 83/100;
+      /* min-width: 260px; */
+      grid-column: 77/100;
       grid-row: 4 / 100;
       display: flex;
       flex-flow:column;
@@ -274,7 +286,7 @@ body a:hover{
       border-radius: 10px;
       overflow: hidden;
       height: 60px;
-      transition: height 0.7s ease;
+      transition: height 0.35s ease;
       -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
       -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
       box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
@@ -282,7 +294,7 @@ body a:hover{
   }
   /* stylizacja hoveru pojemnika statystyk kierowców */
   #drivers-leaderboards:hover{
-      height: 88vh;
+      height: 90vh;
       z-index: 2;
   }
   /* stylizacja nagłówka statystyk kierowców */
@@ -304,8 +316,8 @@ body a:hover{
   .leaderboard-driver{
       width: 100%;
       height: 35px;
-      border-radius: 10px;
       display: flex;
+      border-top: 1px solid rgb(121, 120, 120);
   }
      /* stylizacja pojemnika na punkty konkretnego kierowcy */
   .leaderboard-driver-points{
@@ -315,6 +327,7 @@ body a:hover{
       justify-content: center;
       align-items: center;
       padding-right:5px ;
+
   }
      /* stylizacja pojemnika na nazwę konkretnego kierowcy */
   .leaderboard-driver-name{
@@ -326,6 +339,7 @@ body a:hover{
       font-size: 17px;
       color: black;
       padding-left: 10px;
+      padding-right: 10px;
   }
      /* stylizacja pojemnika na pozycję konkretnego kierowcy */
   .leaderboard-driver-place{
@@ -334,6 +348,16 @@ body a:hover{
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: rgb(185, 185, 185);
+      font-size: 20px;
+  }
+  .leaderboard-driver-number{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
   }
   /* stylizacja linijek statystyk kierowców */
   #drivers-leaderboards a:nth-child(2n){
@@ -348,9 +372,8 @@ body a:hover{
   /* stylizacja pojemnika statystyk zespołów */
   #constructor-leaderboards{
       background-color: #ffffff;
-      min-width: 260px;
-      grid-column: 2/19;
-      grid-row: 4 / 50;
+      grid-column: 2/24;
+      grid-row: 4 / 100;
       display: flex;
       flex-flow:column;
       justify-content: flex-start;
@@ -359,7 +382,7 @@ body a:hover{
       border-radius: 10px;
       overflow: hidden;
       height: 60px;
-      transition: height 0.4s ease;
+      transition: height 0.25s ease;
       -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
       -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
       box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
@@ -367,7 +390,7 @@ body a:hover{
   }
       /* stylizacja hoveru pojemnika statystyk zespołów */
   #constructor-leaderboards:hover{
-      height: 44vh;
+      height: 50vh;
       z-index: 2;
 
   }
@@ -401,6 +424,7 @@ body a:hover{
       justify-content: center;
       align-items: center;
       padding-right:5px ;
+      
   }      /* stylizacja nazw konkretnego zespołu */
   .leaderboard-constructor-name{
       height: 100%;
@@ -419,6 +443,8 @@ body a:hover{
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: rgb(185, 185, 185);
+      font-size: 20px;
   }
   /* stylizacja linijek statystyk zespołow */
   #constructor-leaderboards a:nth-child(2n){
@@ -454,25 +480,25 @@ body a:hover{
       text-shadow: none;
   }
   @media screen and (max-width: 1675px) {
-      #constructor-leaderboards{
+      /* #constructor-leaderboards{
           grid-row:11/ 100 ;
           grid-column: 20 / 35;
-      }
+      } */
       #constructor-leaderboards:hover{
-          height: 43vh;
+          /* height: 43vh; */
       }
-      #drivers-leaderboards{
+      /* #drivers-leaderboards{
           grid-row:11/ 100 ;
           grid-column: 68 / 82;
-      }
+      } */
       #drivers-leaderboards:hover{
-          height: 70vh;
+          /* height: 70vh; */
       }
       #drivers{
-          height: 650px;
+          /* height: 650px;
           width: 430px;
           grid-column: 37 / 82;
-          grid-row: 10 / 100;
+          grid-row: 10 / 100; */
       }
       
   }
