@@ -1,0 +1,72 @@
+#drivers {
+  background-color: rgba(0, 0, 0, 0.541);
+  color: white;
+  grid-column: 25 / 76;
+  grid-row: 10 / 46;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: wrap;
+  min-height: 220px;
+  padding-left: 5px;
+  padding-right: 5px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+  & a {
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s linear;
+    transition: all 0.3s ease;
+  }
+}
+#drivers a:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 10px 0px 10px 0px;
+  .driver img {
+    right: 45px;
+  }
+  .driver-number {
+    right: 5px;
+  }
+}
+
+.driver {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  border-radius: 0px 0px 10px 0px;
+  & span {
+    width: 50px;
+  }
+  & img {
+    width: auto;
+    height: 28px !important;
+    position: absolute;
+    right: 5px;
+    transition: right 0.3s ease;
+  }
+}
+.driver-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  right: 45px;
+  bottom: -1px;
+  font-size: 25px;
+  color: rgb(193, 207, 212);
+  /* background-color: rgb(71, 75, 75); */
+  border-radius: 50%;
+  transition: right 0.3s ease;
+}

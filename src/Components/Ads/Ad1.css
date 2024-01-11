@@ -1,0 +1,21 @@
+.ad1 {
+  grid-column: 1 / 23;
+  grid-row: 1/101;
+  background-color: rgba(0, 0, 0, 0.397);
+  display: flex;
+  max-width: 0px;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  position: relative;
+  padding-bottom: 800px;
+  transition: all 0.3s ease;
+  & .close-ad {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+  }
+}

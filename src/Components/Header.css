@@ -1,0 +1,35 @@
+#header {
+  background-color: rgba(0, 0, 0, 0.397);
+  grid-row: 4 / 10;
+  grid-column: 25 / 76;
+  min-width: 900px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid white;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  & .nav-button {
+    text-shadow: 2px 2px 9px #414141;
+    font-size: 25px;
+    color: white;
+    padding: 2px 16px;
+    transition: color 0.3s ease;
+    padding: 18px;
+    cursor: pointer;
+    &:hover {
+      color: red;
+      text-shadow: none;
+    }
+  }
+}
+#home {
+  border-left: 1.5px solid white;
+  padding: 15px 11px 18px 30px;
+}

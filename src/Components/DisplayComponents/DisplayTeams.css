@@ -1,0 +1,40 @@
+#teams {
+  color: white;
+  grid-row: 10 / 43;
+  grid-column: 25 / 76;
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgba(187, 187, 187, 0.541);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-radius: 10px;
+  & a {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-decoration: none;
+    transition: background-color 0.2s linear;
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(66, 65, 65, 0.281);
+      border-radius: 10px 0px 10px 0px;
+    }
+  }
+}
+.f1-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f1-logo-img {
+  width: 100px;
+  height: auto;
+}

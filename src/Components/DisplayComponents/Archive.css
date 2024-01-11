@@ -1,0 +1,211 @@
+#content-results {
+  grid-column: 25 / 76;
+  grid-row: 10 / 101;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-height: 90vh;
+  -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-radius: 0px 0px 20px 20px;
+  transition: all 0.3s ease;
+}
+
+#season-years {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border-right: 2px solid black;
+  transition: all 0.3s ease;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.season-results {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: width 0.3s ease;
+  transition: box-shadow 0.1s ease;
+  cursor: pointer;
+  &:hover {
+    -webkit-box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+  }
+  &:nth-child(odd) {
+    background-color: white;
+  }
+  &:nth-child(even) {
+    background-color: #ebeaea;
+  }
+}
+
+#season-races {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+  border-right: 2px solid black;
+  overflow-y: scroll;
+}
+
+.season-race {
+  min-height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 0 auto;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:hover {
+    -webkit-box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 1px 19px -7px rgba(66, 68, 90, 1);
+  }
+  &:nth-child(odd) {
+    background-color: white;
+  }
+  &:nth-child(even) {
+    background-color: #ebeaea;
+  }
+  & .season-race-elements {
+    height: 100%;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
+}
+
+/* ------------------------------------------ */
+#season-races-results {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+}
+
+.loading-div {
+  background-color: rgba(0, 0, 0, 0.342);
+  color: white;
+  width: 75%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  & span {
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: rgb(91, 91, 91);
+    padding: 30px;
+    border-radius: 30px;
+    border: 2px solid white;
+  }
+}
+
+#name-of-race {
+  background-color: white;
+  min-height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+  font-size: 22px;
+  & .race-date {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+  }
+  & .race-place {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+  }
+}
+
+.season-race-results {
+  background-color: brown;
+  min-height: 42px;
+  height: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 0 auto;
+  overflow: hidden;
+  font-size: 18px;
+  &:nth-child(odd) {
+    background-color: white;
+  }
+  &:nth-child(even) {
+    background-color: #ebeaea;
+  }
+  & .place {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+  }
+  & .time {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+  }
+  & .drivers-name {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+  }
+  & .constructors-name {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+  }
+  & .points {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+  }
+}

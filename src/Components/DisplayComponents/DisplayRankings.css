@@ -1,0 +1,169 @@
+#content-rankings {
+  grid-column: 25 / 76;
+  grid-row: 10 / 101;
+  -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0px 0px 20px 20px;
+  transition: all 0.3s ease;
+  max-height: 90vh;
+}
+.constructors-ranking {
+  height: auto;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.constructors-ranking-header {
+  width: 100%;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ebeaea;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.constructor-ranking-box {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  border-bottom: 1px solid rgb(61, 61, 61);
+  & .constructor-ranking-place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    font-size: 20px;
+    border-right: 1px solid black;
+  }
+  & .constructor-ranking-name {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    align-items: center;
+    height: 100%;
+    width: 35%;
+    font-size: 18px;
+  }
+  & .constructor-ranking-nationality {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+  }
+  & .constructor-ranking-wins {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+  }
+  & .constructor-ranking-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    border-left: 1px solid black;
+  }
+}
+/* --------------------------------------- */
+.drivers-ranking {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.drivers-ranking-header {
+  width: 100%;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ebeaea;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+.driver-ranking-box {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  border-bottom: 1px solid rgb(168, 168, 168);
+  & .driver-ranking-place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    font-size: 20px;
+    border-right: 1px solid black;
+  }
+  & .driver-ranking-nickname {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  & .driver-ranking-name {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    font-size: 18px;
+  }
+  & .driver-ranking-nationality {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+  }
+  & .driver-ranking-wins {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+  }
+  & .driver-ranking-wins {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+  }
+  & .driver-ranking-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    border-left: 1px solid black;
+  }
+}
