@@ -1,5 +1,5 @@
 #content-results {
-  grid-column: 25 / 76;
+  grid-column: 11 / 90;
   grid-row: 10 / 101;
   display: flex;
   justify-content: flex-start;
@@ -17,6 +17,16 @@
   overflow-x: hidden;
   border-radius: 0px 0px 20px 20px;
   transition: all 0.3s ease;
+  position: relative;
+}
+.back-button-img{
+  height: 40px;
+  width: auto;
+  position: fixed;
+  left: 1%;
+  top: 1%;
+  cursor: pointer;
+  display: none;
 }
 
 #season-years {
@@ -57,7 +67,7 @@
 }
 
 #season-races {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-flow: column;
@@ -65,6 +75,7 @@
   transition: all 0.3s ease;
   border-right: 2px solid black;
   overflow-y: scroll;
+  position: relative;
 }
 
 .season-race {
@@ -100,19 +111,30 @@
 
 /* ------------------------------------------ */
 #season-races-results {
-  width: 80%;
+  width: 70%;
   height: 100%;
   display: flex;
   position: relative;
   flex-flow: column;
   overflow-y: scroll;
   transition: all 0.3s ease;
+  background-color: white;
+}
+#season-races-results-first-time{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  overflow-y: scroll;
+  transition: all 0.3s ease;
+  background-color: white;
 }
 
 .loading-div {
   background-color: rgba(0, 0, 0, 0.342);
   color: white;
-  width: 75%;
+  width: 100%;
   height: 100%;
   position: fixed;
   display: flex;
@@ -142,13 +164,13 @@
   font-size: 22px;
   & .race-date {
     position: absolute;
-    top: 35px;
-    right: 30px;
+    top: 30px;
+    right: 3vw;
   }
   & .race-place {
     position: absolute;
-    top: 35px;
-    left: 30px;
+    top: 10px;
+    right: 3vw;
   }
 }
 
@@ -161,6 +183,7 @@
   align-items: center;
   flex: 1 0 auto;
   overflow: hidden;
+  /* font-size: 13px; */
   font-size: 18px;
   &:nth-child(odd) {
     background-color: white;
@@ -191,6 +214,7 @@
     justify-content: flex-start;
     align-items: center;
     cursor: default;
+    /* padding-left: 5%; */
   }
   & .constructors-name {
     width: 20%;
@@ -207,5 +231,37 @@
     justify-content: center;
     align-items: center;
     cursor: default;
+  }
+}
+@media screen and (max-width: 768px) {
+  #content-results {
+    grid-column: 5 / 96;
+  }
+}
+@media screen and (max-width: 576px) {
+  #content-results {
+    grid-row: 8 / 101;
+    grid-column: 2 / 100;
+  }
+  .season-race{
+    & .season-race-elements{
+      font-size: 15px !important;
+    }
+  }
+  .season-race-results{
+    font-size: 13px;
+    & .drivers-name{
+      padding-left: 5%;
+    }
+  }
+  #name-of-race{
+    font-size: 19px;
+
+    & .race-date{
+      font-size: 15px;
+    }
+    & .race-place{
+      font-size: 15px;
+    }
   }
 }

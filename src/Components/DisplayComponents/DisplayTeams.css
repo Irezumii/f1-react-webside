@@ -3,6 +3,7 @@
   grid-row: 10 / 43;
   grid-column: 25 / 76;
   min-height: 260px;
+  min-width: 680px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -37,4 +38,9 @@
 .f1-logo-img {
   width: 100px;
   height: auto;
+}
+@media screen and (max-width: 800px) {
+#teams{
+  display: none;
+}
 }

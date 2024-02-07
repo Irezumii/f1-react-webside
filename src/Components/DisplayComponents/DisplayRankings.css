@@ -1,5 +1,5 @@
 #content-rankings {
-  grid-column: 25 / 76;
+  grid-column: 12 / 89;
   grid-row: 10 / 101;
   -webkit-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
   -moz-box-shadow: 1px 1px 32px -4px rgb(73, 73, 73);
@@ -123,7 +123,7 @@
     height: 100%;
     width: 10%;
     padding-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
   }
   & .driver-ranking-name {
     display: flex;
@@ -165,5 +165,87 @@
     height: 100%;
     width: 10%;
     border-left: 1px solid black;
+  }
+}
+@media screen and (max-width: 768px) {
+  #content-rankings {
+    grid-column: 5 / 96;
+  }
+  .driver-ranking-box {
+    & .driver-ranking-name {
+      font-size: 16px;
+      width: 35%;
+    }
+    & .driver-ranking-wins {
+      padding-right: 1%;
+      width: 10%;
+    }
+    & .driver-ranking-nationality {
+      padding-left: 0px;
+      width: 25%;
+    }
+    & .driver-ranking-nickname {
+      padding-left: 2%;
+    }
+  }
+  .constructor-ranking-box {
+    .constructor-ranking-name {
+      font-size: 16px;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  #content-rankings{
+    grid-row: 8 / 101;
+    grid-column: 2 / 100;
+  }
+}
+@media screen and (max-width: 500px) {
+  .drivers-ranking-header {
+    font-size: 20px;
+  }
+  .constructors-ranking-header{
+    font-size: 20px;
+  }
+  .driver-ranking-box {
+    & .driver-ranking-place {
+      font-size: 16px;
+      width: 7%;
+    }
+    & .driver-ranking-nickname {
+      font-size: 14px;
+    }
+    & .driver-ranking-name {
+      font-size: 13px;
+    }
+
+    & .driver-ranking-nationality {
+      width: 28%;
+      font-size: 13px;
+    }
+    & .driver-ranking-wins {
+      font-size: 14px;
+    }
+    & .driver-ranking-points {
+      font-size: 14px;
+    }
+  }
+  .constructor-ranking-box {
+    & .constructor-ranking-place {
+      font-size: 16px;
+    }
+    & .constructor-ranking-name {
+      font-size: 13px;
+    }
+    & .constructor-ranking-nationality {
+      font-size: 13px;
+    }
+    & .constructor-ranking-wins {
+      font-size: 14px;
+      padding-right: 1%;
+    }
+    & .constructor-ranking-points {
+      font-size: 14px;
+    }
   }
 }

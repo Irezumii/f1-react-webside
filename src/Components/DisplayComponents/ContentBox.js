@@ -4,8 +4,8 @@ import { useState } from "react"
 
 import Header from "../Header"
 import Display from "../Display"
-import Ad1 from "../Ads/Ad1"
-import Ad2 from "../Ads/Ad2"
+// import Ad1 from "../Ads/Ad1"
+// import Ad2 from "../Ads/Ad2"
 
 export default function ContentBox() {
     console.log("++++++++++ContentBox is Rendering ++++++++++")
@@ -25,8 +25,8 @@ export default function ContentBox() {
                 onSetDisplayTrigger={setDisplayTrigger}
                 onSetIsHovered={setIsHovered}
             />
-            <Ad1 />
-            <Ad2 />
+            {/* <Ad1 />
+            <Ad2 /> */}
         </div>
     )
 }

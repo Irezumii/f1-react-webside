@@ -1,6 +1,7 @@
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { useFetch } from "../../Hooks/useFetch"
 import './Archive.css'
+import backImg from '../../assets/back-arrow.png'
 
 
 export default function Archive() {
@@ -8,9 +9,13 @@ export default function Archive() {
     const [dataYear, setDataYear] = useState(null)
     const [dataRace, setDataRace] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [isWide, setIsWide] = useState(false);
 
     const seasonYears = useRef(null)
     const seasonRaces = useRef(null)
+    const raceResult = useRef(null)
+    const seasonRacesImg = useRef(null)
+    const raceResultImg = useRef(null)
     const raceNameBox = useRef([])
     const raceName = useRef([])
     const raceDate = useRef([])
@@ -18,23 +23,100 @@ export default function Archive() {
     const getItemYears = useFetch(dataYear)
     const getItemRace = useFetch(dataRace, setIsLoading)
 
+    useEffect(() => {
+        function handleResize() {
+            setIsWide(window.innerWidth > 1000);
+            console.log(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize()
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(function () {
+        console.log("useEffect dziala")
+        if (!isWide && raceResult && raceResult.current && seasonRaces.current.style.width !== "100%") {
+            raceResult.current.style.width = "100%"
+            raceResultImg.current.style.display = "block"
+        } else if (isWide && raceResult && raceResult.current) {
+            raceResult.current.style.width = "70%"
+            raceResultImg.current.style.display = "none"
+        }
+        if (!isWide && seasonYears && seasonYears.current && seasonRaces && seasonRaces.current) {
+            seasonYears.current.style.width = "0%"
+            seasonRacesImg.current.style.display = "block"
+        } else if (isWide && seasonYears && seasonYears.current && seasonRaces && seasonRaces.current) {
+            seasonYears.current.style.width = "10%"
+            seasonRacesImg.current.style.display = "none"
+        }
+        if (!isWide && seasonRaces && seasonRaces.current && raceResult && raceResult.current) {
+            if (raceResult && raceResult.current && raceResult.current.style.width !== "0%") {
+                seasonRaces.current.style.width = "0%"
+                console.log("kod się wykonuje dla pomniejszenia seasonRaces")
+            }
+        } else if (isWide && seasonRaces && seasonRaces.current && raceResult && raceResult.current) {
+            seasonRaces.current.style.width = "20%"
+        }
+
+    }, [isWide, getItemRace, getItemYears])
 
     function handleClickYear(el) {
-        seasonYears.current.style.width = "10%"
+        if (!isWide) {
+            seasonYears.current.style.width = "0%"
+            // seasonRacesImg.current.style.display = "block"
+            if (seasonRaces && seasonRaces.current && seasonRacesImg && seasonRacesImg.current) {
+                seasonRaces.current.style.width = "100%"
+            }
+        } else {
+            seasonYears.current.style.width = "10%"
+            if (seasonRaces && seasonRaces.current && seasonRaces.current.style.width !== "20%") {
+                seasonRaces.current.style.width = "90%"
+
+            }
+        }
         setDataYear(el + ".json")
         console.log("Setting Year To", el)
     }
 
     function handleClickRace(year, race) {
         setIsLoading(true)
-
         const tempDiv = seasonRaces.current.style
-        tempDiv.width = "20%"
-        tempDiv.height = "102%"
-        tempDiv.paddingBottom = "10px"
+
+        if (!isWide) {
+            if (raceResult && raceResult.current) {
+                raceResult.current.style.width = "100%"
+                raceResultImg.current.style.display = "block"
+            }
+            tempDiv.width = "0%"
+            tempDiv.height = "102%"
+            seasonRacesImg.current.style.display = "none"
+            tempDiv.paddingBottom = "10px"
+        } else {
+            tempDiv.width = "20%"
+            if (raceResult && raceResult.current) {
+                raceResultImg.current.style.display = "none"
+                raceResult.current.style.width = "70%"
+            }
+        }
 
         const temp = `${year}/${race}/results.json`
         setDataRace(temp)
+    }
+    function handleBack() {
+        seasonYears.current.style.width = "100%"
+        seasonRaces.current.style.width = "0%"
+        seasonRacesImg.current.style.display = "none"
+    }
+
+    function handleBack2() {
+        raceResult.current.style.width = "0%"
+        seasonRaces.current.style.width = "100%"
+        seasonRacesImg.current.style.display = "block"
+        raceResultImg.current.style.display = "none"
     }
 
     return (
@@ -77,11 +159,12 @@ export default function Archive() {
                                 </div>
                             )
                         })}
+                        <img src={backImg} ref={seasonRacesImg} className="back-button-img" alt="" onClick={() => handleBack(seasonRaces, seasonYears)} />
                     </div>
                 }
                 {getItemRace && getItemRace.MRData &&
-                    <div id='season-races-results'>
-                        {isLoading === true ? <div className='loading-div'><span>Loading...</span></div> : null}
+                    <div id='season-races-results' ref={raceResult}>
+                        <img src={backImg} className="back-button-img" ref={raceResultImg} alt="" onClick={() => handleBack2()} />
                         <div id="name-of-race">
                             <span className='race-date'>{getItemRace.MRData.RaceTable.Races[0].date}</span>
                             <span className='race-place'>{getItemRace.MRData.RaceTable.Races[0].Circuit.Location.locality}</span>
@@ -111,6 +194,8 @@ export default function Archive() {
                         })}
                     </div>
                 }
+                {isLoading === true ? <div className='loading-div'><span>Loading...</span></div> : null}
+
             </div>
         </>
     )

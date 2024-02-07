@@ -1,7 +1,7 @@
 #drivers {
   background-color: rgba(0, 0, 0, 0.541);
   color: white;
-  grid-column: 25 / 76;
+  grid-column: 20 / 81;
   grid-row: 10 / 46;
   display: flex;
   justify-content: space-around;
@@ -69,4 +69,15 @@
   /* background-color: rgb(71, 75, 75); */
   border-radius: 50%;
   transition: right 0.3s ease;
+}
+@media screen and (max-width: 1203px){
+  #drivers{
+    grid-column: 29 / 72;
+    grid-row: 10 / 66;
+  }
+}
+@media screen and (max-width: 1003px){
+#drivers{
+  display: none;
+}
 }
