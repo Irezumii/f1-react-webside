@@ -12,7 +12,7 @@ export function useFetch(url, setIsLoading = null) {
             controller.abort()
         }
 
-        let link = `http://ergast.com/api/f1/${url}`
+        let link = `https://ergast.com/api/f1/${url}`
 
         const fetchData = async () => {
             try {
