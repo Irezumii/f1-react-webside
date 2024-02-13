@@ -17,12 +17,12 @@
   border-right: 2px solid white;
   border-top: 1px solid white;
   border-radius: 10px;
-  & a {
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.2s linear;
-    transition: all 0.3s ease;
-  }
+}
+#drivers a {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.2s linear;
+  transition: all 0.3s ease;
 }
 #drivers a:hover {
   text-decoration: none;
@@ -44,16 +44,16 @@
   align-items: center;
   position: relative;
   border-radius: 0px 0px 10px 0px;
-  & span {
-    width: 50px;
-  }
-  & img {
-    width: auto;
-    height: 28px !important;
-    position: absolute;
-    right: 5px;
-    transition: right 0.3s ease;
-  }
+}
+.driver span {
+  width: 50px;
+}
+.driver img {
+  width: auto;
+  height: 28px !important;
+  position: absolute;
+  right: 5px;
+  transition: right 0.3s ease;
 }
 .driver-number {
   display: flex;
@@ -66,18 +66,17 @@
   bottom: -1px;
   font-size: 25px;
   color: rgb(193, 207, 212);
-  /* background-color: rgb(71, 75, 75); */
   border-radius: 50%;
   transition: right 0.3s ease;
 }
-@media screen and (max-width: 1203px){
-  #drivers{
+@media screen and (max-width: 1203px) {
+  #drivers {
     grid-column: 29 / 72;
     grid-row: 10 / 66;
   }
 }
-@media screen and (max-width: 1003px){
-#drivers{
-  display: none;
-}
+@media screen and (max-width: 1003px) {
+  #drivers {
+    display: none;
+  }
 }
