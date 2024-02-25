@@ -19,7 +19,7 @@ A Formula 1 website containing real-time updated rankings of drivers and teams, 
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/Irezumii/F1-webside.git
+git clone https://github.com/Irezumii/f1-react-webside.git
 
 2. Install dependencies:
 cd f1-react
